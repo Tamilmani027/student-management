@@ -13,7 +13,9 @@ email:{
 	unique:true,
 	lowercase:true
 },
-students:[{type:mongoose.Schema.Types.ObjectId,ref:'Student'}]
+students:[{
+	type:mongoose.Schema.Types.ObjectId,
+	ref:'Student'}]
 },
 {
 	timestamp:true

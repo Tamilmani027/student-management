@@ -1,12 +1,12 @@
 import express from 'express';
-import { createStudent } from '../controllers/student.controller.js';
+import { assignMentor, createStudent, getPreviousMentors, getUnassignedStudents } from '../controllers/student.controller.js';
 
 const router=express.Router();
 
-router.post('/',createStudent);
-//router.get('/unassigned');
-//router.put('/:studentId/assign-mentor')
-//router.get('/:studentId/previous-mentor')
+router.post('/', createStudent);
+router.get('/unassigned', getUnassignedStudents);
+router.put('/:studentId/assign-mentor', assignMentor);
+router.get('/:studentId/previous-mentor', getPreviousMentors);
 
 
 

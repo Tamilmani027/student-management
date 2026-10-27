@@ -1,11 +1,11 @@
 import express from 'express';
-import { createMentor } from '../controllers/mentor.controller.js';
+import { assignStudents, createMentor, getStudents } from '../controllers/mentor.controller.js';
 
 const router=express.Router();
 
 router.post('/',createMentor);
-//router.put('/:mentorId/assign-students')
-//router.get('/:mentorId/students')
+router.put('/:mentorId/assign-students',assignStudents);
+router.get('/:mentorId/students',getStudents);
 
 
 
