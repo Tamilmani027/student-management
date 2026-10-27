@@ -126,10 +126,7 @@ export const getPreviousMentors = async (req, res) => {
         const { studentId } = req.params;
 
         const student = await Student.findById(studentId)
-            .populate({
-                path: "previousMentors",
-                select: "name email"
-            });
+            .populate("previousMentors");
 
         if (!student) {
             return res.status(404).json({
